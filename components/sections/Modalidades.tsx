@@ -17,13 +17,13 @@ const WHATSAPP_NUMBER = "5521969735614";
 const MODALIDADES: Modalidade[] = [
   {
     title: "Jiu-Jitsu",
-    text: "Arte marcial de origem japonesa aperfeiçoada no Brasil. Desenvolve técnica, estratégia e autoconhecimento. Turmas para adultos, kids e baby kids — todos os níveis são bem-vindos, do iniciante ao avançado.",
+    text: "Arte marcial de origem japonesa aperfeiçoada no Brasil. Desenvolve técnica, estratégia e autoconhecimento. Turmas para adultos, kids e baby kids. Todos os níveis são bem-vindos, do iniciante ao avançado.",
     image: "/images/jiujitsu-treino-03.jpg",
     whatsappMessage: "Quero começar no Jiu-Jitsu",
   },
   {
     title: "Boxe",
-    text: "Condicionamento físico de alto nível aliado à técnica de socos e footwork. Treino completo para quem busca preparo físico, disciplina e confiança — sem precisar ser atleta para começar.",
+    text: "Condicionamento físico de alto nível aliado à técnica de socos e footwork. Treino completo para quem busca preparo físico, disciplina e confiança. Não é preciso ser atleta para começar.",
     image: "/images/boxe-aula-06.jpg",
     whatsappMessage: "Quero começar no Boxe",
   },
