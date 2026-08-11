@@ -23,7 +23,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Studio Trion — Jiu-Jitsu, Boxe e Muay Thai | Anil, Rio de Janeiro",
+  title: "Studio Trion | Jiu-Jitsu, Boxe e Muay Thai | Anil, Rio de Janeiro",
   description:
     "Academia de artes marciais no Anil, Rio de Janeiro. Jiu-Jitsu, Boxe e Muay Thai para todos os níveis. Agende sua aula experimental.",
 };
