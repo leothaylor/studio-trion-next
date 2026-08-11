@@ -62,7 +62,7 @@ export default function Contato() {
           </SectionTitle>
           <div className="mt-5 space-y-4 text-[0.97rem] leading-relaxed text-neutral-600">
             <p>
-              Agende sua aula experimental. Não precisa ter experiência — nossos
+              Agende sua aula experimental. Não precisa ter experiência. Nossos
               professores adaptam o treino ao seu nível desde o primeiro dia.
             </p>
             <p>
