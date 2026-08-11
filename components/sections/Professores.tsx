@@ -12,10 +12,10 @@ const DESTAQUES = [
     photo: "/images/ygor-professor-07.jpg",
     instagram: "https://www.instagram.com/ygorrodriguesjj/",
     conquistas: [
-      { Icon: Trophy, text: "Pódio — Campeonato Brasileiro de Jiu-Jitsu 2019" },
-      { Icon: Globe, text: "Participação — Campeonato Kids World Tour" },
+      { Icon: Trophy, text: "Pódio no Campeonato Brasileiro de Jiu-Jitsu 2019" },
+      { Icon: Globe, text: "Participação no Campeonato Kids World Tour" },
     ],
-    bio: "Faixa-preta com trajetória competitiva no nível nacional, Ygor traz para o tatame do Studio Trion a mesma dedicação que o levou ao pódio. Suas aulas combinam técnica apurada e didática acessível — para adultos e crianças.",
+    bio: "Faixa-preta com trajetória competitiva no nível nacional, Ygor traz para o tatame do Studio Trion a mesma dedicação que o levou ao pódio. Suas aulas combinam técnica apurada e didática acessível para adultos e crianças.",
   },
   {
     name: "Yago Rodrigues",
@@ -23,8 +23,8 @@ const DESTAQUES = [
     photo: "/images/yago-professor-09.jpg",
     instagram: "https://www.instagram.com/yagorodriguesbjj/",
     conquistas: [
-      { Icon: Trophy, text: "Pódio — Campeonato Brasileiro de Jiu-Jitsu 2019" },
-      { Icon: Globe, text: "Participação — Campeonato Kids World Tour" },
+      { Icon: Trophy, text: "Pódio no Campeonato Brasileiro de Jiu-Jitsu 2019" },
+      { Icon: Globe, text: "Participação no Campeonato Kids World Tour" },
     ],
     bio: "Faixa-preta e especialista em turmas de iniciação infantil, Yago une vivência competitiva a uma abordagem lúdica e segura para os menores. No adulto, conduz turmas com foco técnico e progressão real.",
   },
@@ -66,7 +66,7 @@ export default function Professores() {
           <SectionTitle
             label="Quem te ensina"
             dark
-            subtitle="Nossos instrutores têm histórico competitivo real — prova de que dominam o que ensinam. Aqui você aprende com quem viveu cada movimento."
+            subtitle="Nossos professores têm histórico competitivo real, o que mostra que dominam o que ensinam. Aqui você aprende com quem viveu cada movimento."
           >
             Professores com{" "}
             <span className="text-brand-gold">autoridade comprovada.</span>
