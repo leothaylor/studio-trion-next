@@ -1,6 +1,6 @@
 /**
  * Dados e pendências centralizados do Studio Trion.
- * Os campos marcados com TODO NÃO devem ser inventados — aguardam confirmação.
+ * Os campos marcados com TODO NÃO devem ser inventados. Aguardam confirmação.
  */
 
 export const WHATSAPP = "5521969735614";
@@ -15,8 +15,8 @@ export const INSTAGRAM_URL = "https://instagram.com/studio.trion";
 
 export const ADDRESS = {
   line1: "Estrada do Engenho D'Água nº 1375",
-  line2: "Loja 112 — BR Stores",
-  line3: "Anil, Rio de Janeiro — RJ",
+  line2: "Loja 112, BR Stores",
+  line3: "Anil, Rio de Janeiro, RJ",
   cep: "CEP 22765-240",
 };
 
