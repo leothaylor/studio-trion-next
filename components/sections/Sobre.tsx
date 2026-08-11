@@ -102,7 +102,7 @@ export default function Sobre() {
         >
           <AutoImageCarousel
             images={SOBRE_CAROUSEL_IMAGES}
-            intervalMs={4800}
+            intervalMs={4000}
             className="aspect-[4/5] w-full"
           />
         </motion.div>
