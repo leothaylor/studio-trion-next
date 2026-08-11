@@ -3,48 +3,47 @@
 import { useState, type FormEvent } from "react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
-import { FORMSPREE_ID, FORMSPREE_URL, WHATSAPP_URL } from "@/lib/constants";
+import { WHATSAPP, WHATSAPP_URL } from "@/lib/constants";
+
+const MODALIDADE_LABELS: Record<string, string> = {
+  "jiujitsu-adulto": "Jiu-Jitsu Adulto",
+  "jiujitsu-kids": "Jiu-Jitsu Kids",
+  boxe: "Boxe",
+  muaythai: "Muay Thai",
+};
 
 export default function Contato() {
-  const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
-    const form = e.currentTarget;
-    const data = new FormData(form);
 
-    // Validação simples dos obrigatórios
+    const data = new FormData(e.currentTarget);
     const nome = String(data.get("nome") || "").trim();
     const telefone = String(data.get("telefone") || "").trim();
     const modalidade = String(data.get("modalidade") || "").trim();
+    const horario = String(data.get("horario") || "").trim();
+
     if (!nome || !telefone || !modalidade) {
       setError("Preencha nome, telefone e modalidade.");
       return;
     }
 
-    // Enquanto o endpoint real do Formspree não estiver configurado, simula o envio.
-    if (FORMSPREE_ID === "YOUR_FORMSPREE_ID") {
-      setSent(true);
-      return;
-    }
+    const mensagem = [
+      "Olá, Studio Trion! Quero agendar uma aula experimental.",
+      "",
+      `Nome: ${nome}`,
+      `WhatsApp / Telefone: ${telefone}`,
+      `Modalidade: ${MODALIDADE_LABELS[modalidade] || modalidade}`,
+      `Horário de preferência: ${horario || "Não informado"}`,
+    ].join("\n");
 
-    try {
-      setLoading(true);
-      const res = await fetch(FORMSPREE_URL, {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-      if (res.ok) setSent(true);
-      else setError("Não foi possível enviar. Tente pelo WhatsApp.");
-    } catch {
-      setError("Erro de rede. Tente pelo WhatsApp.");
-    } finally {
-      setLoading(false);
-    }
+    window.open(
+      `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
   }
 
   const inputCls =
@@ -88,74 +87,59 @@ export default function Contato() {
 
         {/* Formulário */}
         <div className="rounded-[var(--radius-brand-lg)] bg-[#f8f8f7] p-8 shadow-[0_2px_8px_rgba(0,0,0,0.10)] md:p-10">
-          {!sent ? (
-            <form onSubmit={handleSubmit} noValidate>
-              <h3 className="mb-7 text-lg font-extrabold text-brand-black">
-                Agende sua aula experimental
-              </h3>
+          <form onSubmit={handleSubmit} noValidate>
+            <h3 className="mb-7 text-lg font-extrabold text-brand-black">
+              Agende sua aula experimental
+            </h3>
 
-              <div className="mb-[18px]">
-                <label htmlFor="nome" className={labelCls}>
-                  Nome completo <span className="text-brand-gold">*</span>
-                </label>
-                <input id="nome" name="nome" type="text" placeholder="Seu nome" autoComplete="name" className={inputCls} required />
-              </div>
-
-              <div className="mb-[18px]">
-                <label htmlFor="telefone" className={labelCls}>
-                  WhatsApp / Telefone <span className="text-brand-gold">*</span>
-                </label>
-                <input id="telefone" name="telefone" type="tel" placeholder="(21) 99999-9999" autoComplete="tel" className={inputCls} required />
-              </div>
-
-              <div className="mb-[18px]">
-                <label htmlFor="modalidade" className={labelCls}>
-                  Modalidade de interesse <span className="text-brand-gold">*</span>
-                </label>
-                <select id="modalidade" name="modalidade" defaultValue="" className={inputCls} required>
-                  <option value="" disabled>
-                    Selecione a modalidade
-                  </option>
-                  <option value="jiujitsu-adulto">Jiu-Jitsu Adulto</option>
-                  <option value="jiujitsu-kids">Jiu-Jitsu Kids</option>
-                  <option value="boxe">Boxe</option>
-                  <option value="muaythai">Muay Thai</option>
-                </select>
-              </div>
-
-              <div className="mb-[18px]">
-                <label htmlFor="horario" className={labelCls}>
-                  Horário de preferência
-                </label>
-                <input id="horario" name="horario" type="text" placeholder="Ex: manhã, noite, qualquer horário..." className={inputCls} />
-              </div>
-
-              {error && (
-                <p className="mb-4 text-sm font-semibold text-[#c0392b]">{error}</p>
-              )}
-
-              <Button type="submit" variant="gold" block>
-                {loading ? "Enviando..." : "Agendar Aula Experimental"}
-              </Button>
-
-              <p className="mt-3 text-center text-xs leading-relaxed text-brand-gray">
-                Seus dados não serão compartilhados. Entraremos em contato em até 24h.
-              </p>
-            </form>
-          ) : (
-            <div className="py-10 text-center" aria-live="polite">
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-brand-gold text-2xl font-bold text-brand-black">
-                ✓
-              </div>
-              <h3 className="mb-2.5 text-xl font-bold text-brand-black">
-                Pedido recebido!
-              </h3>
-              <p className="text-[0.93rem] text-brand-gray">
-                Em breve entraremos em contato para confirmar sua aula
-                experimental. Até lá!
-              </p>
+            <div className="mb-[18px]">
+              <label htmlFor="nome" className={labelCls}>
+                Nome completo <span className="text-brand-gold">*</span>
+              </label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome" autoComplete="name" className={inputCls} required />
             </div>
-          )}
+
+            <div className="mb-[18px]">
+              <label htmlFor="telefone" className={labelCls}>
+                WhatsApp / Telefone <span className="text-brand-gold">*</span>
+              </label>
+              <input id="telefone" name="telefone" type="tel" placeholder="(21) 99999-9999" autoComplete="tel" className={inputCls} required />
+            </div>
+
+            <div className="mb-[18px]">
+              <label htmlFor="modalidade" className={labelCls}>
+                Modalidade de interesse <span className="text-brand-gold">*</span>
+              </label>
+              <select id="modalidade" name="modalidade" defaultValue="" className={inputCls} required>
+                <option value="" disabled>
+                  Selecione a modalidade
+                </option>
+                <option value="jiujitsu-adulto">Jiu-Jitsu Adulto</option>
+                <option value="jiujitsu-kids">Jiu-Jitsu Kids</option>
+                <option value="boxe">Boxe</option>
+                <option value="muaythai">Muay Thai</option>
+              </select>
+            </div>
+
+            <div className="mb-[18px]">
+              <label htmlFor="horario" className={labelCls}>
+                Horário de preferência
+              </label>
+              <input id="horario" name="horario" type="text" placeholder="Ex: manhã, noite, qualquer horário..." className={inputCls} />
+            </div>
+
+            {error && (
+              <p className="mb-4 text-sm font-semibold text-[#c0392b]">{error}</p>
+            )}
+
+            <Button type="submit" variant="gold" block>
+              Agendar Aula Experimental
+            </Button>
+
+            <p className="mt-3 text-center text-xs leading-relaxed text-brand-gray">
+              Seus dados não serão compartilhados. Entraremos em contato em até 24h.
+            </p>
+          </form>
         </div>
       </div>
     </section>
