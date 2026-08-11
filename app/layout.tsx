@@ -22,10 +22,37 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const SOCIAL_PREVIEW_IMAGE =
+  "https://leothaylor.github.io/studio-trion-next/images/studio-trion-og.jpg?v=2";
+
 export const metadata: Metadata = {
   title: "Studio Trion | Jiu-Jitsu, Boxe e Muay Thai | Anil, Rio de Janeiro",
   description:
     "Academia de artes marciais no Anil, Rio de Janeiro. Jiu-Jitsu, Boxe e Muay Thai para todos os níveis. Agende sua aula experimental.",
+  openGraph: {
+    title: "Studio Trion | Jiu-Jitsu, Boxe e Muay Thai | Anil, Rio de Janeiro",
+    description:
+      "Academia de artes marciais no Anil, Rio de Janeiro. Jiu-Jitsu, Boxe e Muay Thai para todos os níveis. Agende sua aula experimental.",
+    url: "https://leothaylor.github.io/studio-trion-next/",
+    siteName: "Studio Trion",
+    type: "website",
+    locale: "pt_BR",
+    images: [
+      {
+        url: SOCIAL_PREVIEW_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Studio Trion | Jiu-Jitsu, Boxe e Muay Thai",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Studio Trion | Jiu-Jitsu, Boxe e Muay Thai | Anil, Rio de Janeiro",
+    description:
+      "Academia de artes marciais no Anil, Rio de Janeiro. Jiu-Jitsu, Boxe e Muay Thai para todos os níveis. Agende sua aula experimental.",
+    images: [SOCIAL_PREVIEW_IMAGE],
+  },
 };
 
 export default function RootLayout({
