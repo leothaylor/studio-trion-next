@@ -3,8 +3,7 @@
  * Os campos marcados com TODO NÃO devem ser inventados — aguardam confirmação.
  */
 
-// TODO: substituir pelo número real de WhatsApp (só dígitos, com DDI 55 + DDD).
-export const WHATSAPP = "55XXXXXXXXXXX";
+export const WHATSAPP = "5521969735614";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP}`;
 
 // TODO: substituir pelo ID real do formulário Formspree (formspree.io) para receber leads.
