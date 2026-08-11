@@ -15,11 +15,11 @@ export default function Footer() {
     <footer className="border-t-2 border-brand-gold/70 bg-brand-black text-brand-white">
       <div className="mx-auto grid max-w-[1140px] gap-12 px-6 py-14 md:grid-cols-[1.5fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
-          <Link href="#inicio" aria-label="Studio Trion — voltar ao topo">
+          <Link href="#inicio" aria-label="Studio Trion, voltar ao topo">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={asset("/images/logo-white.png")}
-              alt="Studio Trion — Brazilian Jiu-Jitsu"
+              alt="Studio Trion, Brazilian Jiu-Jitsu"
               className="h-9 w-auto object-contain"
             />
           </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
             <br />
             {ADDRESS.line2}, Anil
             <br />
-            Rio de Janeiro — RJ
+            Rio de Janeiro, RJ
           </p>
           <a
             href={INSTAGRAM_URL}
