@@ -11,6 +11,9 @@ const MAPS_QUERY =
 const MAPS_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
   MAPS_QUERY
 )}&output=embed`;
+const MAPS_ROUTE_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+  MAPS_QUERY
+)}`;
 
 export default function Localizacao() {
   return (
@@ -61,8 +64,8 @@ export default function Localizacao() {
               </div>
             </div>
 
-            <Button href="#contato" variant="gold">
-              Agendar aula experimental
+            <Button href={MAPS_ROUTE_URL} variant="gold" external>
+              Abrir rota
             </Button>
           </div>
 
