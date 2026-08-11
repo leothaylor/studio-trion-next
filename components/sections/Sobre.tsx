@@ -47,6 +47,14 @@ const SOBRE_CAROUSEL_IMAGES = [
     src: "/images/sobre-carousel-08.jpg",
     alt: "Studio Trion — ambiente e comunidade 8",
   },
+  {
+    src: "/images/sobre-carousel-muaythai-terca-quinta.jpg",
+    alt: "Studio Trion — Muay Thai terça e quinta",
+  },
+  {
+    src: "/images/sobre-carousel-bjj-babykids.jpg",
+    alt: "Studio Trion — BJJ Baby Kids",
+  },
 ];
 
 export default function Sobre() {
