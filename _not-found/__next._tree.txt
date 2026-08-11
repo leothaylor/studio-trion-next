@@ -1,0 +1,10 @@
+:HL["/studio-trion-next/_next/static/media/0484562807a97172-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/studio-trion-next/_next/static/media/78d0dd042ac6d54d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/studio-trion-next/_next/static/media/7db6c35d839a711c-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/studio-trion-next/_next/static/media/8888a3826f4a3af4-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/studio-trion-next/_next/static/media/b957ea75a84b6ea7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/studio-trion-next/_next/static/media/eaead17c7dbfcd5d-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/studio-trion-next/_next/static/media/eafabf029ad39a43-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/studio-trion-next/_next/static/css/97b20c9c4b30ce02.css","style"]
+:HL["/studio-trion-next/images/logo-white.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"xo4dxyJKqa1DBDuQfgNTC"}
