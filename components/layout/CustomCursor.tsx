@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Cursor customizado: anel dourado que segue o mouse com leve inércia.
+ * Cursor customizado: anel dourado que acompanha o mouse diretamente.
  * Somente desktop (pointer: fine). Cresce ao passar sobre links/botões.
  * Desativado quando prefers-reduced-motion está ligado.
  */
@@ -22,22 +22,8 @@ export default function CustomCursor() {
 
     document.body.classList.add("has-custom-cursor");
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let curX = mouseX;
-    let curY = mouseY;
-    let raf = 0;
-
     const onMove = (e: MouseEvent) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    };
-
-    const tick = () => {
-      curX += (mouseX - curX) * 0.18;
-      curY += (mouseY - curY) * 0.18;
-      el.style.transform = `translate(${curX}px, ${curY}px) translate(-50%, -50%)`;
-      raf = requestAnimationFrame(tick);
+      el.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
     };
 
     const onOver = (e: MouseEvent) => {
@@ -51,10 +37,8 @@ export default function CustomCursor() {
     window.addEventListener("mousemove", onMove, { passive: true });
     document.addEventListener("mouseover", onOver);
     document.addEventListener("mouseout", onOut);
-    raf = requestAnimationFrame(tick);
 
     return () => {
-      cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseover", onOver);
       document.removeEventListener("mouseout", onOut);
