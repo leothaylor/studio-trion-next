@@ -3,13 +3,50 @@
 import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Counter from "@/components/ui/Counter";
-import { asset } from "@/lib/asset";
+import AutoImageCarousel from "@/components/ui/AutoImageCarousel";
 
 // TODO: confirmar números reais (sócios, professores, modalidades) com o Studio Trion.
 const STATS = [
   { to: 3, suffix: "", label: "Sócios Faixa-Preta" },
   { to: 5, suffix: "", label: "Professores" },
   { to: 3, suffix: "", label: "Modalidades" },
+];
+
+// A primeira imagem já existe no projeto. As demais entram automaticamente
+// quando forem enviadas para public/images com estes nomes exatos.
+const SOBRE_CAROUSEL_IMAGES = [
+  {
+    src: "/images/grupo-familia-05.jpg",
+    alt: "Studio Trion — apresentação da academia",
+  },
+  {
+    src: "/images/sobre-carousel-02.jpg",
+    alt: "Studio Trion — ambiente e comunidade 2",
+  },
+  {
+    src: "/images/sobre-carousel-03.jpg",
+    alt: "Studio Trion — ambiente e comunidade 3",
+  },
+  {
+    src: "/images/sobre-carousel-04.jpg",
+    alt: "Studio Trion — ambiente e comunidade 4",
+  },
+  {
+    src: "/images/sobre-carousel-05.jpg",
+    alt: "Studio Trion — ambiente e comunidade 5",
+  },
+  {
+    src: "/images/sobre-carousel-06.jpg",
+    alt: "Studio Trion — ambiente e comunidade 6",
+  },
+  {
+    src: "/images/sobre-carousel-07.jpg",
+    alt: "Studio Trion — ambiente e comunidade 7",
+  },
+  {
+    src: "/images/sobre-carousel-08.jpg",
+    alt: "Studio Trion — ambiente e comunidade 8",
+  },
 ];
 
 export default function Sobre() {
@@ -63,12 +100,10 @@ export default function Sobre() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="order-first md:order-last"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={asset("/images/grupo-familia-05.jpg")}
-            alt="Equipe Studio Trion — alunos e professores"
-            className="aspect-[4/5] w-full rounded-[var(--radius-brand-lg)] object-cover object-top"
-            loading="lazy"
+          <AutoImageCarousel
+            images={SOBRE_CAROUSEL_IMAGES}
+            intervalMs={4800}
+            className="aspect-[4/5] w-full"
           />
         </motion.div>
       </div>
