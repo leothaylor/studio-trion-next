@@ -10,6 +10,7 @@ const DESTAQUES = [
     name: "Ygor Rodrigues",
     modal: "Jiu-Jitsu · Kids",
     photo: "/images/ygor-professor-07.jpg",
+    instagram: "https://www.instagram.com/ygorrodriguesjj/",
     conquistas: [
       { Icon: Trophy, text: "Pódio — Campeonato Brasileiro de Jiu-Jitsu 2019" },
       { Icon: Globe, text: "Participação — Campeonato Kids World Tour" },
@@ -20,6 +21,7 @@ const DESTAQUES = [
     name: "Yago Rodrigues",
     modal: "Jiu-Jitsu · Baby Kids",
     photo: "/images/yago-professor-09.jpg",
+    instagram: "https://www.instagram.com/yagorodriguesbjj/",
     conquistas: [
       { Icon: Trophy, text: "Pódio — Campeonato Brasileiro de Jiu-Jitsu 2019" },
       { Icon: Globe, text: "Participação — Campeonato Kids World Tour" },
@@ -28,12 +30,32 @@ const DESTAQUES = [
   },
 ];
 
-// TODO: confirmar identidade/foto do terceiro sócio faixa-preta.
+// As miniaturas da equipe usam o avatar atual do Instagram via unavatar.
 const EQUIPE = [
-  { name: "Luiza", modal: "Muay Thai" },
-  { name: "Allan", modal: "Jiu-Jitsu" },
-  { name: "Leonardo", modal: "Jiu-Jitsu" },
-  { name: "Claudio", modal: "Boxe" },
+  {
+    name: "Luiza",
+    modal: "Muay Thai",
+    instagram: "https://www.instagram.com/luiza_thai1/",
+    avatar: "https://unavatar.io/instagram/luiza_thai1",
+  },
+  {
+    name: "Allan",
+    modal: "Jiu-Jitsu",
+    instagram: "https://www.instagram.com/allan.mcruz/",
+    avatar: "https://unavatar.io/instagram/allan.mcruz",
+  },
+  {
+    name: "Leonardo",
+    modal: "Jiu-Jitsu",
+    instagram: "https://www.instagram.com/leothaylor/",
+    avatar: "https://unavatar.io/instagram/leothaylor",
+  },
+  {
+    name: "Claudio",
+    modal: "Boxe",
+    instagram: "https://www.instagram.com/cltheodoro/",
+    avatar: "https://unavatar.io/instagram/cltheodoro",
+  },
 ];
 
 export default function Professores() {
@@ -69,7 +91,15 @@ export default function Professores() {
               />
               <div className="p-7">
                 <h3 className="mb-1.5 text-xl font-extrabold text-brand-white">
-                  {p.name}
+                  <a
+                    href={p.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-brand-gold"
+                    aria-label={`Instagram de ${p.name}`}
+                  >
+                    {p.name}
+                  </a>
                 </h3>
                 <span className="mb-1 inline-block rounded-full bg-brand-gold/10 px-2.5 py-0.5 text-xs font-bold uppercase tracking-widest text-brand-gold">
                   ⚫ Faixa-Preta
@@ -90,25 +120,32 @@ export default function Professores() {
         </div>
 
         <h3 className="mb-7 text-center text-base font-bold uppercase tracking-widest text-brand-gray">
-          Equipe de instrutores
+          Equipe de professores
         </h3>
         <div className="flex flex-wrap justify-center gap-5">
           {EQUIPE.map((prof, i) => (
-            <motion.div
+            <motion.a
               key={prof.name}
+              href={prof.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Instagram de ${prof.name}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="flex min-w-[120px] flex-col items-center gap-2 rounded-[var(--radius-brand-lg)] border border-white/10 bg-brand-black-soft px-6 py-5 transition-colors hover:border-brand-gold"
             >
-              {/* placeholder-foto: iniciais até foto real do professor. */}
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-brand-black-soft to-[#3d3200] text-xl font-bold text-brand-gold">
-                {prof.name.charAt(0)}
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={prof.avatar}
+                alt={`Foto de perfil de ${prof.name}`}
+                className="h-16 w-16 rounded-full object-cover"
+                loading="lazy"
+              />
               <span className="text-sm font-bold text-brand-white">{prof.name}</span>
               <span className="text-xs tracking-wide text-brand-gray">{prof.modal}</span>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
