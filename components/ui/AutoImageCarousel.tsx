@@ -25,7 +25,6 @@ export default function AutoImageCarousel({
     images.slice(0, 1),
   );
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   const imageKey = useMemo(
     () => images.map((image) => image.src).join("|"),
@@ -62,14 +61,14 @@ export default function AutoImageCarousel({
   }, [imageKey, images]);
 
   useEffect(() => {
-    if (paused || availableImages.length <= 1 || prefersReducedMotion) return;
+    if (availableImages.length <= 1 || prefersReducedMotion) return;
 
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % availableImages.length);
     }, intervalMs);
 
     return () => window.clearInterval(timer);
-  }, [availableImages.length, intervalMs, paused, prefersReducedMotion]);
+  }, [availableImages.length, intervalMs, prefersReducedMotion]);
 
   const activeImage = availableImages[activeIndex] ?? availableImages[0];
 
@@ -78,10 +77,6 @@ export default function AutoImageCarousel({
   return (
     <div
       className={`group relative overflow-hidden rounded-[var(--radius-brand-lg)] bg-neutral-100 ${className}`}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocusCapture={() => setPaused(true)}
-      onBlurCapture={() => setPaused(false)}
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.img
