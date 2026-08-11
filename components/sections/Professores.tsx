@@ -30,31 +30,31 @@ const DESTAQUES = [
   },
 ];
 
-// As miniaturas da equipe usam o avatar atual do Instagram via unavatar.
+// Avatares locais da equipe. Subir os arquivos em public/images com estes nomes exatos.
 const EQUIPE = [
   {
     name: "Luiza",
     modal: "Muay Thai",
     instagram: "https://www.instagram.com/luiza_thai1/",
-    avatar: "https://unavatar.io/instagram/luiza_thai1",
+    avatar: "/images/prof-luiza-avatar.jpg",
   },
   {
     name: "Allan",
     modal: "Jiu-Jitsu",
     instagram: "https://www.instagram.com/allan.mcruz/",
-    avatar: "https://unavatar.io/instagram/allan.mcruz",
+    avatar: "/images/prof-allan-avatar.jpg",
   },
   {
     name: "Leonardo",
     modal: "Jiu-Jitsu",
     instagram: "https://www.instagram.com/leothaylor/",
-    avatar: "https://unavatar.io/instagram/leothaylor",
+    avatar: "/images/prof-leonardo-avatar.jpg",
   },
   {
     name: "Claudio",
     modal: "Boxe",
     instagram: "https://www.instagram.com/cltheodoro/",
-    avatar: "https://unavatar.io/instagram/cltheodoro",
+    avatar: "/images/prof-claudio-avatar.jpg",
   },
 ];
 
@@ -138,7 +138,7 @@ export default function Professores() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={prof.avatar}
+                src={asset(prof.avatar)}
                 alt={`Foto de perfil de ${prof.name}`}
                 className="h-16 w-16 rounded-full object-cover"
                 loading="lazy"
