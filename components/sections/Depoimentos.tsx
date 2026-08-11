@@ -10,7 +10,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Button from "@/components/ui/Button";
 import { WHATSAPP } from "@/lib/constants";
 
-// PLACEHOLDER: nunca inventar nome/texto de aluno — aguardando depoimentos reais autorizados.
+// PLACEHOLDER: nunca inventar nome/texto de aluno. Aguardando depoimentos reais autorizados.
 const DEPOIMENTOS = [
   { modal: "Jiu-Jitsu" },
   { modal: "Muay Thai" },
@@ -90,7 +90,7 @@ export default function Depoimentos() {
                   ★★★★★
                 </div>
                 <blockquote className="flex-1 font-serif text-[0.95rem] italic leading-relaxed text-neutral-300">
-                  &ldquo;[Depoimento a inserir — aguardando texto real de aluno
+                  &ldquo;[Depoimento a inserir. Aguardando texto real de aluno
                   autorizado]&rdquo;
                 </blockquote>
                 <figcaption className="flex items-center gap-3">
