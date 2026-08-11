@@ -19,9 +19,9 @@ const jj = (prof: string): Aula => ({ nome: "Jiu-Jitsu", prof, tipo: "jiujitsu" 
 const mt = (prof: string): Aula => ({ nome: "Muay Thai", prof, tipo: "muaythai" });
 const bx = (prof: string): Aula => ({ nome: "Boxe", prof, tipo: "boxe" });
 const kids = (nome: string, prof: string): Aula => ({ nome, prof, tipo: "kids" });
-const X: Aula = { nome: "—", prof: "", tipo: null };
+const X: Aula = { nome: "–", prof: "", tipo: null };
 
-// Grade real (não alterar) — cada linha: [Seg, Ter, Qua, Qui, Sex]
+// Grade real (não alterar): cada linha segue [Seg, Ter, Qua, Qui, Sex]
 const GRADE: { hora: string; aulas: Aula[] }[] = [
   { hora: "06:00–07:30", aulas: [mt("Luiza"), X, mt("Luiza"), X, mt("Luiza")] },
   { hora: "08:00–09:30", aulas: [jj("Allan"), X, jj("Allan"), X, jj("Allan")] },
@@ -114,7 +114,7 @@ export default function Horarios() {
                           <span className="block text-[0.7rem] text-brand-gray">{aula.prof}</span>
                         </>
                       ) : (
-                        "—"
+                        "–"
                       )}
                     </td>
                   ))}
