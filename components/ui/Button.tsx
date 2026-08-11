@@ -63,6 +63,27 @@ export default function Button({
         </a>
       );
     }
+
+    if (href.startsWith("#")) {
+      return (
+        <a
+          href={href}
+          className={cls}
+          aria-label={ariaLabel}
+          onClick={(event) => {
+            event.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth", block: "start" });
+              window.history.replaceState(null, "", href);
+            }
+          }}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link href={href} className={cls} aria-label={ariaLabel}>
         {children}
