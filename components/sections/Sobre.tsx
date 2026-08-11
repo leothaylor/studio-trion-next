@@ -5,10 +5,9 @@ import SectionTitle from "@/components/ui/SectionTitle";
 import Counter from "@/components/ui/Counter";
 import AutoImageCarousel from "@/components/ui/AutoImageCarousel";
 
-// TODO: confirmar números reais (sócios, professores, modalidades) com o Studio Trion.
 const STATS = [
-  { to: 3, suffix: "", label: "Sócios Faixa-Preta" },
-  { to: 5, suffix: "", label: "Professores" },
+  { to: 2, suffix: "", label: "Sócios Faixa-Preta" },
+  { to: 6, suffix: "", label: "Professores" },
   { to: 3, suffix: "", label: "Modalidades" },
 ];
 
@@ -17,43 +16,43 @@ const STATS = [
 const SOBRE_CAROUSEL_IMAGES = [
   {
     src: "/images/grupo-familia-05.jpg",
-    alt: "Studio Trion — apresentação da academia",
+    alt: "Studio Trion, apresentação da academia",
   },
   {
     src: "/images/sobre-carousel-02.jpg",
-    alt: "Studio Trion — ambiente e comunidade 2",
+    alt: "Studio Trion, ambiente e comunidade 2",
   },
   {
     src: "/images/sobre-carousel-03.jpg",
-    alt: "Studio Trion — ambiente e comunidade 3",
+    alt: "Studio Trion, ambiente e comunidade 3",
   },
   {
     src: "/images/sobre-carousel-04.jpg",
-    alt: "Studio Trion — ambiente e comunidade 4",
+    alt: "Studio Trion, ambiente e comunidade 4",
   },
   {
     src: "/images/sobre-carousel-05.jpg",
-    alt: "Studio Trion — ambiente e comunidade 5",
+    alt: "Studio Trion, ambiente e comunidade 5",
   },
   {
     src: "/images/sobre-carousel-06.jpg",
-    alt: "Studio Trion — ambiente e comunidade 6",
+    alt: "Studio Trion, ambiente e comunidade 6",
   },
   {
     src: "/images/sobre-carousel-07.jpg",
-    alt: "Studio Trion — ambiente e comunidade 7",
+    alt: "Studio Trion, ambiente e comunidade 7",
   },
   {
     src: "/images/sobre-carousel-08.jpg",
-    alt: "Studio Trion — ambiente e comunidade 8",
+    alt: "Studio Trion, ambiente e comunidade 8",
   },
   {
     src: "/images/sobre-carousel-muaythai-terca-quinta.jpg",
-    alt: "Studio Trion — Muay Thai terça e quinta",
+    alt: "Studio Trion, Muay Thai terça e quinta",
   },
   {
     src: "/images/sobre-carousel-bjj-babykids.jpg",
-    alt: "Studio Trion — BJJ Baby Kids",
+    alt: "Studio Trion, BJJ Baby Kids",
   },
 ];
 
@@ -63,7 +62,7 @@ export default function Sobre() {
       <div className="mx-auto grid max-w-[1140px] items-center gap-16 px-6 md:grid-cols-2">
         <div>
           <SectionTitle label="Quem somos" align="left">
-            Três faixas-pretas.
+            Dois faixas-pretas.
             <br />
             Uma missão.
           </SectionTitle>
@@ -72,9 +71,9 @@ export default function Sobre() {
             <p className="text-[0.97rem] leading-relaxed text-neutral-700">
               O Studio Trion nasceu da união de três faixas-pretas com uma visão
               compartilhada: tornar as artes marciais acessíveis para qualquer
-              pessoa — independente de idade, nível físico ou experiência anterior.
+              pessoa, independentemente de idade, nível físico ou experiência anterior.
             </p>
-            {/* PLACEHOLDER: texto institucional detalhado — inserir quando fornecido pelos sócios. */}
+            {/* PLACEHOLDER: texto institucional detalhado, inserir quando fornecido pelos sócios. */}
             <p className="text-[0.97rem] leading-relaxed text-neutral-500 italic">
               [Texto institucional a inserir: história da academia, valores dos
               sócios, visão de comunidade e propósito da Tríade Mente, Corpo e
@@ -82,7 +81,7 @@ export default function Sobre() {
             </p>
             <p className="text-[0.97rem] leading-relaxed text-neutral-700">
               Localizado no Anil, Rio de Janeiro, o Studio Trion é mais do que uma
-              academia — é uma comunidade que cresce junta, respeitando cada passo
+              academia. É uma comunidade que cresce junta, respeitando cada passo
               da jornada de cada aluno.
             </p>
           </div>
