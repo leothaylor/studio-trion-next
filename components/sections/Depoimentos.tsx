@@ -112,13 +112,13 @@ export default function Depoimentos() {
         </Swiper>
 
         <div className="mt-2 flex justify-center">
-          <Button
+          <button
             type="button"
-            variant="gold-outline"
             onClick={() => setFormOpen(true)}
+            className="group inline-flex items-center justify-center gap-2 rounded-[var(--radius-brand)] border-2 border-brand-gold bg-transparent px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-brand-gold transition-all duration-300 will-change-transform hover:-translate-y-0.5 hover:bg-brand-gold hover:text-brand-black active:translate-y-0"
           >
             Deixar meu depoimento
-          </Button>
+          </button>
         </div>
       </div>
 
