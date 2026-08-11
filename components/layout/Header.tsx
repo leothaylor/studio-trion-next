@@ -18,7 +18,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scroll spy — destaca a seção visível
+  // Scroll spy: destaca a seção visível
   useEffect(() => {
     const sections = Array.from(
       document.querySelectorAll<HTMLElement>("section[id]")
@@ -51,11 +51,11 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-full max-w-[1140px] items-center gap-6 px-6">
-        <Link href="#inicio" aria-label="Studio Trion — página inicial" className="flex flex-shrink-0 items-center">
+        <Link href="#inicio" aria-label="Studio Trion, página inicial" className="flex flex-shrink-0 items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={asset("/images/logo-white.png")}
-            alt="Studio Trion — Brazilian Jiu-Jitsu"
+            alt="Studio Trion, Brazilian Jiu-Jitsu"
             className={`w-auto object-contain transition-all duration-300 ${
               scrolled ? "h-8" : "h-[42px]"
             }`}
