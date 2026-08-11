@@ -9,7 +9,7 @@ import { asset } from "@/lib/asset";
 
 const HEADLINE = [
   "Jiu-Jitsu, Boxe e Muay Thai",
-  "para quem nunca pisou num tatame —",
+  "para quem nunca pisou no tatame",
   "e para quem já não quer parar.",
 ];
 
